@@ -12,9 +12,6 @@ const DOACOES_CHANNEL = process.env.DOACOES_CHANNEL_ID;
 client.once("ready", () => {
   console.log(`✅ KhalArmy Bot online como ${client.user.tag}`);
 
-  // TESTE — apague essa linha depois
-  sendMessage(BOSS_MUNDIAL_CHANNEL, "⚔️ **TESTE** — Bot funcionando! Esta mensagem pode apagar.");
-
   // Boss Mundial — aviso 15min antes das 12:00 (11:45)
   cron.schedule("45 11 * * *", () => {
     sendMessage(BOSS_MUNDIAL_CHANNEL, "⚔️ **BOSS MUNDIAL EM 15 MINUTOS!**\n@everyone\nBoss Mundial começa às **12:00**! Se preparem! 💀");
