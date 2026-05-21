@@ -37,11 +37,15 @@ client.once("ready", () => {
     sendMessage(BOSS_NATUREZA_CHANNEL, "🌿 **BOSS NATUREZA EM 15 MINUTOS!**\n@everyone\nBoss Natureza começa às **19:00**! 🌿");
   }, { timezone: "America/Sao_Paulo" });
 
-  // Doações — toda segunda às 09:00
-  cron.schedule("0 9 * * 1", () => {
-    sendMessage(DOACOES_CHANNEL, "💰 **LEMBRETE DE DOAÇÕES DA SEMANA**\n@everyone\nContribuam com a guilda esta semana:\n• Posto avançado\n• Tecnologia");
-  }, { timezone: "America/Sao_Paulo" });
-});
+  // Doações — todo dia às 12:00
+cron.schedule("0 12 * * *", () => {
+  sendMessage(DOACOES_CHANNEL, "💰 **LEMBRETE DE DOAÇÕES**\n@everyone\nContribuam com a guilda:\n• Posto avançado\n• Tecnologia");
+}, { timezone: "America/Sao_Paulo" });
+
+// Doações — todo dia às 19:00
+cron.schedule("0 19 * * *", () => {
+  sendMessage(DOACOES_CHANNEL, "💰 **LEMBRETE DE DOAÇÕES**\n@everyone\nContribuam com a guilda:\n• Posto avançado\n• Tecnologia");
+}, { timezone: "America/Sao_Paulo" });
 
 function sendMessage(channelId, message) {
   const channel = client.channels.cache.get(channelId);
