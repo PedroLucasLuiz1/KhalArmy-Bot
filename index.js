@@ -38,7 +38,7 @@ client.once("ready", () => {
   }, { timezone: "America/Sao_Paulo" });
 
   // Doações — todo dia às 09:00
-cron.schedule("0 09 * * *", () => {
+cron.schedule("6 09 * * *", () => {
   sendMessage(DOACOES_CHANNEL, "💰 **LEMBRETE DE DOAÇÕES**\n@everyone\nContribuam com a guilda:\n• Posto avançado\n• Tecnologia");
 }, { timezone: "America/Sao_Paulo" });
 
